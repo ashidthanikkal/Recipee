@@ -1,0 +1,58 @@
+<div class="single">
+
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <img 
+                width="100%"
+                class="shadow my-5 rounded-4"
+                [src]="restData.image"
+                 alt="">
+            </div>
+            <div class="col-lg-6 p-5">
+                <h1>{{restData.name}}</h1>
+
+                <div class="d-flex justify-content-evently gap-1">
+                    <p class="badge rounded-pill text-bg-warning">{{restData.difficulty}}</p>
+                    <p class="badge rounded-pill text-bg-secondary">{{restData.rating}} <i class="fa-solid fa-star" style="color: #ffdb57;"></i> ({{restData.reviewCount}})</p>
+                    <p class="badge rounded-pill text-bg-secondary">{{restData.cuisine}}</p>
+
+                    <p *ngFor="let i of restData.mealType" class="badge rounded-pill text-bg-success">{{i}}</p>
+
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-evently gap-1">
+                    <h6 *ngFor="let i of restData.tags">#{{i}}</h6>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-evently gap-3 mt-2">
+                    <h6><i class="fa-solid fa-clock" style="color: #000000;"></i> Preperation Time: {{restData.prepTimeMinutes}} min</h6>
+                    <h6><i class="fa-solid fa-hourglass-end" style="color: #000000;"></i> Cooking Time: {{restData.cookTimeMinutes}} min</h6>
+                    <h6><i class="fa-solid fa-fire fa-lg" style="color: #000000;"></i> Calories: {{restData.caloriesPerServing}}</h6>
+                </div>
+
+                <div class=" p-2 rounded" style="background-color: rgb(255, 255, 208);">
+                    <div>
+                        <h2>Ingreedients</h2>
+                        <ul>
+                            <li *ngFor="let i of restData.ingredients">{{i}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class=" p-2 rounded mt-2" style="background-color: rgb(255, 255, 208);">
+                    <div>
+                        <h2>Preparation</h2>
+                        <p>{{restData.instructions}}</p>
+                    </div>
+                </div>
+
+
+                
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

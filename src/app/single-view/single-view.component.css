@@ -1,0 +1,8 @@
+.single{
+    background-color: #fafafa;
+    min-height: 613px;
+}
+
+.row{
+    --bs-gutter-x: 0rem;
+}
